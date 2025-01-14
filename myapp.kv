@@ -3,8 +3,8 @@
         orientation: 'vertical'
         BoxLayout:
             orientation: 'vertical'
-            size_hint: None, None
-            size: 400, 50
+            size_hint: 0.8, 0.1  # ปรับขนาดตามหน้าจอ
+            pos_hint: {'center_x': 0.5, 'center_y': 0.9}  # อยู่ตรงกลางด้านบน
             canvas.before:
                 Color:
                     rgb: 1, 0, 0
@@ -15,8 +15,8 @@
                 text: 'name'
         BoxLayout:
             orientation: 'vertical'
-            size_hint: None, None
-            size: 400, 150
+            size_hint: 0.8, 0.3  # ปรับขนาดตามหน้าจอ
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}  # อยู่ตรงกลาง
             canvas.before:
                 Color:
                     rgb: 0, 1, 0
@@ -24,11 +24,11 @@
                     pos: self.pos
                     size: self.size
             Label:
-                text: 'gole'
+                text: 'goal'
         BoxLayout:
             orientation: 'vertical'
-            size_hint: None, None
-            size: 400,350
+            size_hint: 0.8, 0.5  # ปรับขนาดตามหน้าจอ
+            pos_hint: {'center_x': 0.5, 'center_y': 0.1}  # อยู่ตรงกลางด้านล่าง
             canvas.before:
                 Color:
                     rgb: 0, 0, 1
@@ -36,4 +36,4 @@
                     pos: self.pos
                     size: self.size
             Label:
-                text: 'activative'
+                text: 'activity'
