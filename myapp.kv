@@ -1,7 +1,7 @@
 <Appnote>:
     BoxLayout:
         orientation: 'vertical'
-        BoxLayout:
+        BoxLayout: #name
             orientation: 'vertical'
             size_hint: 1, 0.05  # ปรับขนาดตามหน้าจอ
             pos_hint: {'center_x': 0.5, 'center_y': 0.9}  # อยู่ตรงกลางด้านบน
@@ -11,18 +11,17 @@
                 halign:'left'
                 valign:'middle'
                 text_size: self.size
-        BoxLayout:
+        BoxLayout: #goal
             orientation: 'vertical'
             size_hint: 1, 0.3  # ปรับขนาดตามหน้าจอ
             pos_hint: {'center_x': 0.5, 'center_y': 0.5}  # อยู่ตรงกลาง
-            canvas.before:
-                Color:
-                    rgb: 0, 1, 0
-                Rectangle:
-                    pos: self.pos
-                    size: self.size
+            padding:[50,0,0,0]
             Label:
                 text: 'goal'
+                halign:'left'
+                valign:'top'
+                text_size: self.size
+            
         BoxLayout:
             orientation: 'vertical'
             size_hint: 1, 0.5  # ปรับขนาดตามหน้าจอ
