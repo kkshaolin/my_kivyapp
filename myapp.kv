@@ -29,12 +29,15 @@
                     text: 'Short-term goal:'
                     size_hint: 0.3, 1
                     halign: 'left'
-                    valign: 'middle'
+                    valign: 'top'
                     text_size: self.size
                 TextInput:
                     id: Shortterm_goal
                     text: 'Enter your Short-term goal here'
                     multiline: False
+                    size_hint: 0.7, 1
+                CheckBox:
+                    id: Shortterm_goal
                     size_hint: 0.7, 1
             BoxLayout:
                 orientation: 'horizontal'
@@ -51,20 +54,10 @@
                     text: 'Enter your Long-term goal here'
                     multiline: False
                     size_hint: 0.7, 1
-            BoxLayout:
-                orientation: 'horizontal'
-                size_hint: 1, None
-                height: 40
-                Label:
-                    text: 'Completed:'
-                    size_hint: 0.3, 1
-                    halign: 'left'
-                    valign: 'middle'
-                    text_size: self.size
                 CheckBox:
-                    id: goal_completed
+                    id: Longterm_goal
                     size_hint: 0.7, 1
-                    
+
         BoxLayout:
             orientation: 'vertical'
             size_hint: 1, 0.5  # ปรับขนาดตามหน้าจอ
