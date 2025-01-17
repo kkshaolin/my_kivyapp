@@ -17,7 +17,7 @@
             pos_hint: {'center_x': 0.5, 'center_y': 0.5}  # อยู่ตรงกลาง
             padding:[50,0,0,0]
             Label:
-                text: 'goal'
+                text: 'Goal'
                 halign:'left'
                 valign:'top'
                 text_size: self.size
@@ -58,15 +58,13 @@
                     id: Longterm_goal
                     size_hint: 0.7, 1
 
-        BoxLayout:
+        BoxLayout: #activity
             orientation: 'vertical'
             size_hint: 1, 0.5  # ปรับขนาดตามหน้าจอ
             pos_hint: {'center_x': 0.5, 'center_y': 0.1}  # อยู่ตรงกลางด้านล่าง
-            canvas.before:
-                Color:
-                    rgb: 0, 0, 1
-                Rectangle:
-                    pos: self.pos
-                    size: self.size
+            padding:[50,0,0,0]
             Label:
-                text: 'activity'
+                text: 'Activity'
+                halign:'left'
+                valign:'top'
+                text_size: self.size
