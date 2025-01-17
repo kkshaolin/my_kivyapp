@@ -21,7 +21,17 @@
                 halign:'left'
                 valign:'top'
                 text_size: self.size
-            
+            TextInput:
+                id: Shortterm_goal
+                text: 'Enter your Short-term goal here'
+                multiline: False
+                on_text: Shortterm_goal.text = self.text
+            TextInput:
+                id: Longterm_goal
+                text: 'Enter your Long-term goal here'
+                multiline: False
+                on_text: Longterm_goal.text = self.text
+
         BoxLayout:
             orientation: 'vertical'
             size_hint: 1, 0.5  # ปรับขนาดตามหน้าจอ
