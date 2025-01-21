@@ -59,6 +59,7 @@
                     size_hint: 0.7, 1
 
         BoxLayout: #activity
+            id:activity
             orientation: 'vertical'
             size_hint: 1, 0.5  # ปรับขนาดตามหน้าจอ
             pos_hint: {'center_x': 0.5, 'center_y': 0.1}  # อยู่ตรงกลางด้านล่าง
@@ -68,3 +69,17 @@
                 halign:'left'
                 valign:'top'
                 text_size: self.size
+            BoxLayout:
+                orientation:'horizontal'
+                size_hint: 1, None
+                height: 40
+                TextInput:
+                    id: activity_input
+                    text: 'Enter your activity'
+                    multiline: False
+                    size_hint: 0.7, 1
+                Button:
+                    text: 'Add activity'
+                    size_hint:0.3, 1
+                    on_press: app.add_activity(activity_input.text)
+            
