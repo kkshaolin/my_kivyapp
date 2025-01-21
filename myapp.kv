@@ -69,13 +69,18 @@
                 halign:'left'
                 valign:'top'
                 text_size: self.size
-            BoxLayout:
-                id: activity_layout
-                orientation: 'vertical'
-                size_hint: 1, 0.7  # ขนาดตามแนวตั้ง 90% ของหน้าจอ 
+            ScrollView:
+                id: activity
+                size_hint: 1, 0.7  # ขนาดตามแนวตั้ง 70% ของหน้าจอ
+                BoxLayout:
+                    id: activity_layout
+                    orientation: 'vertical'
+                    size_hint_y: None
+                    height: self.minimum_height
+
             BoxLayout:
                 orientation: 'horizontal'
-                size_hint: 1, 0.3  # ขนาดตามแนวตั้ง 10% ของหน้าจอ
+                size_hint: 1, 0.3  # ขนาดตามแนวตั้ง 30% ของหน้าจอ
                 height: 40
                 TextInput:
                     id: activity_input
