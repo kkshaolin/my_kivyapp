@@ -58,19 +58,12 @@
                     id: Longterm_goal
                     size_hint: 0.7, 1
 
-        BoxLayout: #activity
-            id:activity
+        BoxLayout:
+            id: activity
             orientation: 'vertical'
-            size_hint: 1, 0.5  # ปรับขนาดตามหน้าจอ
-            pos_hint: {'center_x': 0.5, 'center_y': 0.1}  # อยู่ตรงกลางด้านล่าง
-            padding:[50,0,0,0]
-            Label:
-                text: 'Activity'
-                halign:'left'
-                valign:'top'
-                text_size: self.size
+    
             BoxLayout:
-                orientation:'horizontal'
+                orientation: 'horizontal'
                 size_hint: 1, None
                 height: 40
                 TextInput:
@@ -80,6 +73,9 @@
                     size_hint: 0.7, 1
                 Button:
                     text: 'Add activity'
-                    size_hint:0.3, 1
+                    size_hint: 0.3, 1
                     on_press: app.add_activity(activity_input.text)
-            
+    
+                BoxLayout:
+                    id: activity_layout
+                    orientation: 'vertical'
