@@ -17,7 +17,7 @@ class Myapp(App):
             activity_layout = self.root.ids.activity_layout
             new_activity = BoxLayout(orientation='horizontal', size_hint=(1, None), height=40)
             new_activity.add_widget(Label(text=activity_text, size_hint=(1, 1)))
-            activity_layout.add_widget(new_activity)
+            activity_layout.add_widget(new_activity, index=0)  # เพิ่มข้อความใหม่ด้านบน
             self.root.ids.activity_input.text = ''
     
  
