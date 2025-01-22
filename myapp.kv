@@ -33,7 +33,7 @@
                     text_size: self.size
                 TextInput:
                     id: Shortterm_goal
-                    text: 'Enter your Short-term goal here'
+                    hint_text: 'Enter your Short-term goal here'
                     multiline: False
                     size_hint: 0.7, 1
                 CheckBox:
@@ -51,7 +51,7 @@
                     text_size: self.size
                 TextInput:
                     id: Longterm_goal
-                    text: 'Enter your Long-term goal here'
+                    hint_text: 'Enter your Long-term goal here'
                     multiline: False
                     size_hint: 0.7, 1
                 CheckBox:
@@ -83,11 +83,21 @@
                 size_hint: 1, 0.3  # ขนาดตามแนวตั้ง 30% ของหน้าจอ
                 height: 40
                 TextInput:
-                    id: activity_input
-                    text: 'Enter your activity'
+                    id: date_input
+                    hint_text: 'Enter date (YYYY-MM-DD)'
                     multiline: False
-                    size_hint: 0.7, 1
+                    size_hint: 0.3, 1
+                TextInput:
+                    id: time_input
+                    hint_text: 'Enter time (HH:MM)'
+                    multiline: False
+                    size_hint: 0.2, 1
+                TextInput:
+                    id: activity_input
+                    hint_text: 'Enter your activity'
+                    multiline: False
+                    size_hint: 0.3, 1
                 Button:
                     text: 'Add activity'
-                    size_hint: 0.3, 1
-                    on_press: app.add_activity(activity_input.text)
+                    size_hint: 0.2, 1
+                    on_press: app.add_activity(activity_input.text, date_input.text, time_input.text)
