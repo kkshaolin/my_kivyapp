@@ -25,18 +25,40 @@
                 
         BoxLayout: #goal
             orientation: 'vertical'
-            size_hint: 1, 0.3  # ปรับขนาดตามหน้าจอ
+            size_hint: 1, 0.1  # ปรับขนาดตามหน้าจอ
             pos_hint: {'center_x': 0.5, 'center_y': 0.5}  # อยู่ตรงกลาง
             padding:[50,0,0,0]
-            Label:
-                text: 'Goal'
-                halign:'left'
-                valign:'top'
-                text_size: self.size
-            BoxLayout: #ปรับตำแหน่งชิดบน
+            BoxLayout:
+                padding:[50,5,640,5]
+                Label:
+                    text: 'Goal'
+                    halign:'center'
+                    valign:'middle'
+                    text_size: self.size               
+                    color: 0, 0, 0, 1
+                    bold: True
+                    font_name:'font/name.ttf'
+                    font_size:'24sp'
+                    canvas.before:
+                        Color:
+                            rgb: 1, 0.843, 0 
+                        RoundedRectangle:
+                            pos: self.pos
+                            size: self.texture_size
+                            radius: [10,]
+                        
+            BoxLayout:
+                padding:[50,0,100,0] 
                 orientation: 'horizontal'
                 size_hint: 1, None
                 height: 40
+                canvas.before:
+                    Color:
+                        rgba: 0.5, 0.5, 0.5, 1  # สีเทา (RGBA)
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [10,]
                 Label:
                     text: 'Short term:'
                     size_hint: 0.3, 1
@@ -51,7 +73,8 @@
                 CheckBox:
                     id: Shortterm_goal
                     size_hint: 0.7, 1
-            BoxLayout: #ปรับตำแหน่งชิดบน
+            BoxLayout:
+                padding:[50,0,100,0]
                 orientation: 'horizontal'
                 size_hint: 1, None
                 height: 40
