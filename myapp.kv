@@ -2,15 +2,27 @@
     BoxLayout:
         orientation: 'vertical'
         BoxLayout: #name
+            canvas.before:
+                Color:
+                    rgb: 1, 0.843, 0
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
             orientation: 'vertical'
             size_hint: 1, 0.05  # ปรับขนาดตามหน้าจอ
             pos_hint: {'center_x': 0.5, 'center_y': 0.9}  # อยู่ตรงกลางด้านบน
             padding: [20, 0, 0, 0]  # เพิ่ม padding ด้านซ้าย 10 หน่วย
             Label:
-                text: 'GoalPlanner'
+                text: 'Goal Planner'
                 halign:'left'
                 valign:'middle'
                 text_size: self.size
+                color: 0, 0, 0, 1
+                bold: True
+                font_name:'font/name.ttf'
+                font_size:'30sp'
+
+                
         BoxLayout: #goal
             orientation: 'vertical'
             size_hint: 1, 0.3  # ปรับขนาดตามหน้าจอ
@@ -21,12 +33,12 @@
                 halign:'left'
                 valign:'top'
                 text_size: self.size
-            BoxLayout:
+            BoxLayout: #ปรับตำแหน่งชิดบน
                 orientation: 'horizontal'
                 size_hint: 1, None
                 height: 40
                 Label:
-                    text: 'Short-term goal:'
+                    text: 'Short term:'
                     size_hint: 0.3, 1
                     halign: 'left'
                     valign: 'top'
@@ -39,12 +51,12 @@
                 CheckBox:
                     id: Shortterm_goal
                     size_hint: 0.7, 1
-            BoxLayout:
+            BoxLayout: #ปรับตำแหน่งชิดบน
                 orientation: 'horizontal'
                 size_hint: 1, None
                 height: 40
                 Label:
-                    text: 'Long-term goal:'
+                    text: 'Long-term:'
                     size_hint: 0.3, 1
                     halign: 'left'
                     valign: 'middle'
