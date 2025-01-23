@@ -6,11 +6,7 @@ from kivy.uix.textinput import TextInput
 from kivy.uix.stencilview import StencilView
 
 class Appnote(BoxLayout, StencilView):
-    def __init__(self, **kwargs):
-        super(Appnote, self).__init__(**kwargs)
-        self.orientation = 'vertical'
-        self.activity_layout = BoxLayout(orientation='vertical')
-        self.add_widget(self.activity_layout)
+    pass
 
 class Myapp(App):
     def build(self):
