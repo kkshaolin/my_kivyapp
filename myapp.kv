@@ -1,7 +1,7 @@
 <Appnote>:
-    BoxLayout:
+    BoxLayout: #box all
         orientation: 'vertical'
-        BoxLayout: #name
+        BoxLayout: #box name
             canvas.before:
                 Color:
                     rgb: 1, 0.843, 0
@@ -10,7 +10,7 @@
                     size: self.size
             orientation: 'vertical'
             size_hint: 1, 0.05  # ปรับขนาดตามหน้าจอ
-            pos_hint: {'center_x': 0.5, 'center_y': 0.9}  # อยู่ตรงกลางด้านบน
+            #pos_hint: {'center_x': 0.5, 'center_y': 0.9}  # อยู่ตรงกลางด้านบน
             padding: [20, 0, 0, 0]  # เพิ่ม padding ด้านซ้าย 10 หน่วย
             Label:
                 text: 'Goal Planner'
@@ -22,32 +22,56 @@
                 font_name:'font/name.ttf'
                 font_size:'30sp'
 
-                
-        BoxLayout: #goal
+        BoxLayout: #box goal
             orientation: 'vertical'
+            padding:[25,0,0,0]
             size_hint: 1, 0.15  # ปรับขนาดตามหน้าจอ
-            pos_hint: {'center_x': 0.5, 'center_y': 0.5}  # อยู่ตรงกลาง
-            padding:[50,0,0,0]
-            BoxLayout:
-                padding:[50,5,640,5]
-                Label:
-                    text: 'Goal'
-                    halign:'center'
-                    valign:'middle'
-                    text_size: self.size               
-                    color: 0, 0, 0, 1
-                    bold: True
-                    font_name:'font/name.ttf'
-                    font_size:'24sp'
+            #pos_hint: {'center_x': 0.5, 'center_y': 0.5}  # อยู่ตรงกลาง
+            BoxLayout: #box goal 1
+                orientation: 'vertical'
+                BoxLayout: #box black
+                    orientation: 'vertical'
+                    size_hint: 1, 0.1                                 
                     canvas.before:
                         Color:
-                            rgb: 1, 0.843, 0 
+                            rgb: 0, 0, 0 
                         RoundedRectangle:
                             pos: self.pos
-                            size: self.texture_size
-                            radius: [10,]
-            BoxLayout:
-                padding:[50,0,0,0]
+                            size: self.size
+                BoxLayout: #box name goal
+                    size_hint: 1, 0.3
+                   
+                    Label:
+                        text: 'Goal'
+                        halign:'center'
+                        valign:'middle'
+                        size_hint:None,None
+                        width: 70  # กำหนดความกว้างเป็น 400 หน่วย
+                        height: 50
+                        text_size: self.size               
+                        color: 0, 0, 0, 1
+                        bold: True
+                        font_name:'font/name.ttf'
+                        font_size:'24sp'
+                        canvas.before:
+                            Color:
+                                rgb: 1, 0.843, 0 
+                            RoundedRectangle:
+                                pos: self.pos
+                                size: self.texture_size
+                                radius: [10,]
+                BoxLayout: #box black
+                    orientation: 'vertical'
+                    size_hint: 1, 0.1                                 
+                    canvas.before:
+                        Color:
+                            rgb: 0, 0, 0 
+                        RoundedRectangle:
+                            pos: self.pos
+                            size: self.size
+                            
+            BoxLayout: #box goal 2
+                #padding:[100,0,0,0]
                 orientation: 'vertical'
                 size_hint: 1,1
                 canvas.before:
@@ -57,6 +81,7 @@
                         pos: self.pos
                         size: self.size
                         radius: [10,]
+                
                 BoxLayout:                    
                     size_hint: 1, None
                     height: 40
