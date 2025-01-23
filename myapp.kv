@@ -129,7 +129,6 @@
                 valign:'top'
                 text_size: self.size
             ScrollView:
-                id: activity
                 size_hint: 1, 0.7  # ขนาดตามแนวตั้ง 70% ของหน้าจอ
                 BoxLayout:
                     id: activity_layout
@@ -142,21 +141,11 @@
                 size_hint: 1, 0.3  # ขนาดตามแนวตั้ง 30% ของหน้าจอ
                 height: 40
                 TextInput:
-                    id: date_input
-                    hint_text: 'Enter date (YYYY-MM-DD)'
-                    multiline: False
-                    size_hint: 0.3, 1
-                TextInput:
-                    id: time_input
-                    hint_text: 'Enter time (HH:MM)'
-                    multiline: False
-                    size_hint: 0.2, 1
-                TextInput:
                     id: activity_input
-                    hint_text: 'Enter your activity'
+                    hint_text: 'Enter your activity here'
                     multiline: False
                     size_hint: 0.3, 1
                 Button:
-                    text: 'Add activity'
+                    text: 'Add Activity'
                     size_hint: 0.2, 1
-                    on_press: app.add_activity(activity_input.text, date_input.text, time_input.text)
+                    on_press: app.add_activity(activity_input.text)
