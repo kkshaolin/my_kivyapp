@@ -25,7 +25,7 @@
                 
         BoxLayout: #goal
             orientation: 'vertical'
-            size_hint: 1, 0.1  # ปรับขนาดตามหน้าจอ
+            size_hint: 1, 0.15  # ปรับขนาดตามหน้าจอ
             pos_hint: {'center_x': 0.5, 'center_y': 0.5}  # อยู่ตรงกลาง
             padding:[50,0,0,0]
             BoxLayout:
@@ -46,12 +46,10 @@
                             pos: self.pos
                             size: self.texture_size
                             radius: [10,]
-                        
             BoxLayout:
-                padding:[50,0,100,0] 
-                orientation: 'horizontal'
-                size_hint: 1, None
-                height: 40
+                padding:[50,0,0,0]
+                orientation: 'vertical'
+                size_hint: 1,1
                 canvas.before:
                     Color:
                         rgba: 0.5, 0.5, 0.5, 1  # สีเทา (RGBA)
@@ -59,39 +57,40 @@
                         pos: self.pos
                         size: self.size
                         radius: [10,]
-                Label:
-                    text: 'Short term:'
-                    size_hint: 0.3, 1
-                    halign: 'left'
-                    valign: 'top'
-                    text_size: self.size
-                TextInput:
-                    id: Shortterm_goal
-                    hint_text: 'Enter your Short-term goal here'
-                    multiline: False
-                    size_hint: 0.7, 1
-                CheckBox:
-                    id: Shortterm_goal
-                    size_hint: 0.7, 1
-            BoxLayout:
-                padding:[50,0,100,0]
-                orientation: 'horizontal'
-                size_hint: 1, None
-                height: 40
-                Label:
-                    text: 'Long-term:'
-                    size_hint: 0.3, 1
-                    halign: 'left'
-                    valign: 'middle'
-                    text_size: self.size
-                TextInput:
-                    id: Longterm_goal
-                    hint_text: 'Enter your Long-term goal here'
-                    multiline: False
-                    size_hint: 0.7, 1
-                CheckBox:
-                    id: Longterm_goal
-                    size_hint: 0.7, 1
+                BoxLayout:                    
+                    size_hint: 1, None
+                    height: 40
+                    Label:
+                        padding:[50,0,0,0] 
+                        text: 'Short term:'
+                        size_hint: 0.4, 1
+                        halign: 'left'
+                        valign: 'center'
+                        text_size: self.size
+                    TextInput:
+                        id: Shortterm_goal
+                        hint_text: 'Enter your Short-term goal here'
+                        multiline: False
+                    CheckBox:
+                        id: Shortterm_goal
+                        size_hint: 0.7, 1
+                BoxLayout:
+                    size_hint: 1, None
+                    height: 40
+                    Label:
+                        padding:[50,0,0,0] 
+                        text: 'Long-term:'
+                        size_hint: 0.4, 1
+                        halign: 'left'
+                        valign: 'center'
+                        text_size: self.size
+                    TextInput:
+                        id: Longterm_goal
+                        hint_text: 'Enter your Long-term goal here'
+                        multiline: False
+                    CheckBox:
+                        id: Longterm_goal
+                        size_hint: 0.7, 1
 
         BoxLayout: #activity
             id: activity
