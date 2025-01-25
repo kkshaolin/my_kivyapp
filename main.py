@@ -45,7 +45,7 @@ class Myapp(App):
     
     def show_history(self):
         # สร้าง ScrollView
-        scroll_view = ScrollView(size_hint=(1, None), size=(400, 400))
+        scroll_view = ScrollView(size_hint=(1, None), size=(400, 380),)
         
         # สร้าง content สำหรับเก็บกิจกรรม
         content = BoxLayout(orientation='vertical', size_hint_y=None)
