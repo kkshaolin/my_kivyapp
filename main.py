@@ -18,7 +18,7 @@ class Myapp(App):
             return  # ถ้าไม่มีข้อความ activity ให้ return ออกไปเลย
         activity_layout = self.root.ids.activity_layout
         new_activity = BoxLayout(orientation='horizontal', size_hint=(1, None), height=40)
-        new_activity.add_widget(Label(text=activity_text, size_hint=(0.7, 1)))
+        new_activity.add_widget(Label(text=activity_text, size_hint=(0.7, 1), font_name='font/THSarabunNew.ttf'))
         
         # เพิ่ม CheckBox และตั้งค่า event listener
         checkbox = CheckBox(size_hint=(0.3, 1))
