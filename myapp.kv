@@ -66,11 +66,13 @@
                             valign: 'center'
                             text_size: self.size
                             font_name:'font/name.ttf'
+                            font_size: 20
                         TextInput:
                             id: Shortterm_goal
                             hint_text: 'Enter your Short-term goal here'
                             multiline: False
                             font_name:'font/THSarabunNew.ttf'
+                            font_size: 20
                         CheckBox:
                             id: Shortterm_goal
                             size_hint: 0.7, 1
@@ -84,11 +86,13 @@
                             valign: 'center'
                             text_size: self.size
                             font_name:'font/name.ttf'
+                            font_size: 20
                         TextInput:
                             id: Longterm_goal
                             hint_text: 'Enter your Long-term goal here'
                             multiline: False
                             font_name:'font/THSarabunNew.ttf'
+                            font_size: 20
                         CheckBox:
                             id: Longterm_goal
                             size_hint: 0.7, 1
@@ -142,8 +146,10 @@
                     multiline: False
                     size_hint: 0.3, 1
                     font_name:'font/THSarabunNew.ttf'
+                    font_size: 20
                 Button:
                     text: 'Add Activity'
                     font_name:'font/name.ttf'
+                    font_size: 20
                     size_hint: 0.2, 1
                     on_press: app.add_activity(activity_input.text)
