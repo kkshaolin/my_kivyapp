@@ -109,7 +109,7 @@
                     halign:'center'
                     valign:'middle'
                     size_hint:None,None
-                    width: 70  # กำหนดความกว้างเป็น 400 หน่วย
+                    width: 70  
                     height: 50
                     text_size: self.size               
                     color: 0, 0, 0, 1
@@ -129,6 +129,7 @@
                     size_hint: None, None
                     width: 70
                     height: 50
+                    on_press: app.show_history()
             ScrollView:
                 size_hint: 1, 0.75
                 BoxLayout:
