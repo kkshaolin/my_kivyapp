@@ -65,6 +65,7 @@
                             halign: 'left'
                             valign: 'center'
                             text_size: self.size
+                            font_name:'font/name.ttf'
                         TextInput:
                             id: Shortterm_goal
                             hint_text: 'Enter your Short-term goal here'
@@ -81,6 +82,7 @@
                             halign: 'left'
                             valign: 'center'
                             text_size: self.size
+                            font_name:'font/name.ttf'
                         TextInput:
                             id: Longterm_goal
                             hint_text: 'Enter your Long-term goal here'
@@ -93,7 +95,7 @@
             id: activity
             orientation: 'vertical'
             size_hint: 1, 0.6  # ปรับขนาดตามหน้าจอ
-            padding:[25,50,25,0]
+            padding:[25,25,25,0]
             BoxLayout:
                 size_hint:1,0.1                
                 Label:
@@ -137,7 +139,9 @@
                     hint_text: 'Enter your activity here'
                     multiline: False
                     size_hint: 0.3, 1
+                    font_name:'font/name.ttf'
                 Button:
                     text: 'Add Activity'
+                    font_name:'font/name.ttf'
                     size_hint: 0.2, 1
                     on_press: app.add_activity(activity_input.text)
