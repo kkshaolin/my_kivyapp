@@ -20,11 +20,10 @@
                 font_name:'font/name.ttf'
                 font_size:'30sp'
 
-
         BoxLayout: #box goal
             orientation: 'vertical'
             size_hint: 1, 0.3
-            padding:[20,0,0,0]
+            padding:[20,0,20,0]
             BoxLayout: #box name goal
                 size_hint: 1, 0.3                  
                 Label:
@@ -44,13 +43,10 @@
                         RoundedRectangle:
                             pos: self.pos
                             size: self.texture_size
-                            radius: [10,]
-                            
+                            radius: [10,]             
             BoxLayout: #box goal 2
-                #padding:[100,0,0,0]
                 orientation: 'vertical'
-                size_hint: 1,0.7
-                height: 200
+                size_hint: 1,0.6
                 canvas.before:
                     Color:
                         rgba: 0.5, 0.5, 0.5, 1  # สีเทา (RGBA)
@@ -58,76 +54,83 @@
                         pos: self.pos
                         size: self.size
                         radius: [10,]
-                
-                BoxLayout:                    
-                    size_hint: 1, None
-                    height: 40
-                    Label:
-                        padding:[50,0,0,0] 
-                        text: 'Short term:'
-                        size_hint: 0.4, 1
-                        halign: 'left'
-                        valign: 'center'
-                        text_size: self.size
-                    TextInput:
-                        id: Shortterm_goal
-                        hint_text: 'Enter your Short-term goal here'
-                        multiline: False
-                    CheckBox:
-                        id: Shortterm_goal
-                        size_hint: 0.7, 1
                 BoxLayout:
-                    size_hint: 1, None
-                    height: 40
-                    Label:
-                        padding:[50,0,0,0] 
-                        text: 'Long-term:'
-                        size_hint: 0.4, 1
-                        halign: 'left'
-                        valign: 'center'
-                        text_size: self.size
-                    TextInput:
-                        id: Longterm_goal
-                        hint_text: 'Enter your Long-term goal here'
-                        multiline: False
-                    CheckBox:
-                        id: Longterm_goal
-                        size_hint: 0.7, 1
-
-
-
-
+                    orientation:'vertical'
+                    BoxLayout:                    
+                        size_hint: 1,0.5
+                        Label:
+                            padding:[50,0,0,0] 
+                            text: 'Short term:'
+                            size_hint: 0.4, 1
+                            halign: 'left'
+                            valign: 'center'
+                            text_size: self.size
+                        TextInput:
+                            id: Shortterm_goal
+                            hint_text: 'Enter your Short-term goal here'
+                            multiline: False
+                        CheckBox:
+                            id: Shortterm_goal
+                            size_hint: 0.7, 1
+                    BoxLayout:
+                        size_hint: 1,0.5
+                        Label:
+                            padding:[50,0,0,0] 
+                            text: 'Long-term:'
+                            size_hint: 0.4, 1
+                            halign: 'left'
+                            valign: 'center'
+                            text_size: self.size
+                        TextInput:
+                            id: Longterm_goal
+                            hint_text: 'Enter your Long-term goal here'
+                            multiline: False
+                        CheckBox:
+                            id: Longterm_goal
+                            size_hint: 0.7, 1
 
         BoxLayout: #activity
             id: activity
             orientation: 'vertical'
             size_hint: 1, 0.6  # ปรับขนาดตามหน้าจอ
-            padding:[50,0,0,0]
+            padding:[25,50,0,0]
             BoxLayout:
-                size_hint:1,0.1
+                size_hint:1,0.1                
                 Label:
                     text: 'Activity'
-                    halign:'left'
-                    valign:'top'
-                    text_size: self.size
+                    halign:'center'
+                    valign:'middle'
+                    size_hint:None,None
+                    width: 70  # กำหนดความกว้างเป็น 400 หน่วย
+                    height: 50
+                    text_size: self.size               
+                    color: 0, 0, 0, 1
+                    font_name:'font/name.ttf'
+                    font_size:'24sp'
                     canvas.before:
                         Color:
-                            rgb:1, 0.843, 0 
+                            rgb: 1, 0.843, 0 
                         RoundedRectangle:
                             pos: self.pos
-                            size: self.size
+                            size: self.texture_size
                             radius: [10,]
             ScrollView:
-                size_hint: 1, 0.8
+                size_hint: 1, 0.75
                 BoxLayout:
                     id: activity_layout
                     orientation: 'vertical'
                     size_hint_y: None
                     height: self.minimum_height
-
+                    canvas:
+                        Color:
+                            rgba: 0.5, 0.5, 0.5, 1  # สีเทา (RGBA)
+                        RoundedRectangle:
+                            pos: self.pos
+                            size: self.size
+                            radius: [10,]
             BoxLayout:
                 orientation: 'horizontal'
-                size_hint: 1, 0.1
+                size_hint: 1, 0.15
                 height: 40
                 TextInput:
                     id: activity_input
